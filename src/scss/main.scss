@@ -1,0 +1,81 @@
+@import 'colors';
+@import 'unique';
+@import 'fonts';
+@import 'forms';
+@import 'variables';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+
+body{
+  margin: 0;
+  padding: 0;
+
+
+}
+h1, h2, h3{
+  color: $first;
+}
+
+.container{
+  height: $max-height;
+  width: $max-width;
+  //background-color: white;
+
+  display: inline-flex;
+}
+
+.row{
+  margin: 0;
+  width: 100%;
+  //border: 1px solid red;
+  color:red;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;display: flex;
+  flex-direction: row;
+}
+.col{
+  margin: $unit;
+  padding: $unit;
+  width: 96%;
+  //border: 1px solid blue;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.sidebar{
+
+  height: 100%;
+  width: 12%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: $five;
+
+  a{
+    margin: 0;
+    padding: 2%;
+    text-decoration: none;
+    color: white;
+    width: 96%;
+    height: 50px;
+
+    display: block;
+    text-align: center;
+    line-height: 50px;
+
+    transition: background 0.1s ease-in-out, padding-left 0.1s ease-in-out, width 0.1s ease-in-out;
+    &:hover{
+      background-color: $first;
+      padding-left:10%;
+      width: 86%;
+    }
+  }
+}
