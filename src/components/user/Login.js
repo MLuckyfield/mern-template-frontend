@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import axios from 'axios';
-import {useAuthDataContext} from "./components/auth-provider";
+import {axios} from "../../utilities/axios";
+import {useAuthDataContext} from "../auth-provider";
 
 const Login = () => {
 
@@ -23,11 +23,11 @@ const Login = () => {
       })
       .then((res) => {
           onLogin(res.data.result);
-          //window.location='/dash';
+          window.location='/dash';
           })
       .catch((err) => {
         console.log(err);
-        setFeedback(err.response.data.message);
+        // setFeedback(err.response.data.message);
         });
   }
 

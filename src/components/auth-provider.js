@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useMemo, useContext } from "react";
-
+import {setToken} from '../utilities/axios'
 
 export const AuthDataContext = React.createContext();
 
@@ -13,11 +13,17 @@ const AuthDataProvider = props => {
    * the localStorage.
    */
 
-  const onLogout = () => setUser(initialAuthData);
+  const onLogout = () => {
+    setUser(initialAuthData)
+    // setToken()
+  };
 
   const onLogin = (newAuthData) => {
     setUser(newAuthData);
     localStorage.setItem('user', JSON.stringify(newAuthData));
+    localStorage.setItem('token',newAuthData.token)
+    // setToken(newAuthData.token)
+    // axios.defaults.headers['Authorization'] = `Basic ${newAuthData.token}`
   };
 
   useEffect(

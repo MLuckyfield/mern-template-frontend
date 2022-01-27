@@ -7,11 +7,10 @@ import { Redirect } from 'react-router'
 import './scss/main.scss'
 
 //import components
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
-import Login from './Login'
-import Signup from './Signup'
-import AdminDash from './AdminDash'
+import Navbar from './components/nav/Navbar'
+import Login from './components/user/Login'
+import Signup from './components/user/Signup'
+import AdminDash from './components/nav/AdminDash'
 import AuthDataProvider from "./components/auth-provider";
 import {useAuthDataContext} from "./components/auth-provider";
 
@@ -32,7 +31,7 @@ const App = () => {
 
 const SentryRoute = ({ access, success, fail, ...options }) => {
   //const { user } = useAuthDataContext();
-
+// localStorage.setItem('user',null)
   let user = localStorage.getItem('user');
   if(user == '' || null){
     return <Route {...options} component={fail} />;
