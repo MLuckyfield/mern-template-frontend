@@ -3,7 +3,7 @@ import lib from 'axios';
 export const axios = lib.create({})
 axios.interceptors.request.use(
   config => {
-    config.headers['Authorization']=`${localStorage.getItem('token')}`
+    config.headers['Authorization']=`Token ${localStorage.getItem('token')}`
     return config
   },
   error=>{return Promise.reject(error)}
